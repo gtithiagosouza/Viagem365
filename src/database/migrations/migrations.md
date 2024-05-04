@@ -1,0 +1,1 @@
+Nessa pasta fica a estrutura do banco de dados
