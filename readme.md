@@ -19,3 +19,10 @@
 ### Para rodar o repositório em ambiente local:
 
 4° - npm run start:dev
+
+
+## Criamos uma nova Branch
+
+### Main - Produção
+### Develop - Desenvolvimento
+### Feature/* - Devenvolvimento de nova feature
