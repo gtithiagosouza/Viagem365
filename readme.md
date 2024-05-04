@@ -19,12 +19,3 @@
 ### Para rodar o repositório em ambiente local:
 
 4° - npm run start:dev
-
-
-
-Na primeira vez é necessário instalar as dependências:
-npm install
-Se for em ambiente local: npm install --dev
-cp .env_example .env
-Para rodar o repositório em ambiente local
-npm run start:dev
