@@ -15,23 +15,24 @@ const Destino = connection.define('destinos', {
     coordernadas: {
         type: DataTypes.STRING,
     },
-    email: {
-        type: DataTypes.STRING,
+    usuario_id: {
+        type: DataTypes.INTEGER,
     },
-    password: {
-        type: DataTypes.STRING,
-    },
-})
+});
+
 
 
 Destino.belongsTo(Usuario, { foreignKey: 'usuario_id' });
 
-// Adicione o hook beforeCreate para inserir automaticamente o usuario_id
 Destino.beforeCreate(async (destino, options) => {
-    // Suponha que você tenha acesso ao ID do usuário autenticado aqui
-    const usuarioId = /* Obtenha o ID do usuário autenticado */
-    destino.usuario_id = usuarioId;
-  });
-  
+    // Certifique-se de que o parâmetro usuarioId está presente no objeto de destino
+    if (!destino.usuario_id) {
+        throw new Error('Parâmetro usuarioId ausente');
+    }
+});
 
-module.exports = Destino
+
+module.exports = Destino;
+
+
+
