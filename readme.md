@@ -23,12 +23,12 @@
 
 ### Criamos uma nova Branch
 
- Main - Produção
- Develop - Desenvolvimento
- Feature/* - Devenvolvimento de nova feature
+ Main - Produção`
+ Develop - Desenvolvimento`
+ Feature/* - Devenvolvimento de nova feature`
 
 
 ### Rodar uma migration. Opções:
 
-Opção nº 1: sequelize db:migrate
-Opção nº 2: npx sequelize db:migrate
+Opção nº 1: sequelize db:migrate`
+Opção nº 2: npx sequelize db:migrate`
