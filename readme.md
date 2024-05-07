@@ -23,3 +23,9 @@
 ### Rodar uma migration. Opções:
 1. Opção nº 1: `sequelize db:migrate`
 2. Opção nº 2: `npx sequelize db:migrate`
+
+### Sistema de login/autenticação JWT:
+
+1. O sistema possui um sistema de login inteligente. Quando você cadastra um novo usuário com seu login e senha e realiza o login com autenticação JWT, o sistema consegue identificar seu ID e, assim, adicionar os destinos apenas para seu usuário.
+
+2° Você precisa estar autenticado com o TOKEN do JWT tanto para adicionar um novo destino, quanto para listar seus destinos.

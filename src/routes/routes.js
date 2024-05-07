@@ -11,5 +11,6 @@ const routes = Router()
 routes.use('/login', loginRoutes);
 routes.use('/usuarios', usuarioRoutes);
 routes.use('/destinos', auth, destinoRoutes);
+routes.use('/destinos/', auth, destinoRoutes);
 
 module.exports = routes 

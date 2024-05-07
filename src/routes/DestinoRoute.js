@@ -1,7 +1,7 @@
 const { Router } = require('express') // 
 const { auth } = require('../middleware/auth')
 const Destino = require('../models/Destino')
-
+const Usuario = require('../models/Usuario');
 
 const destinoRoutes = new Router()
 
@@ -41,6 +41,28 @@ destinoRoutes.post('/', async (req, res) => {
             message: 'Não possível cadastrar o aluno' })
     }
 })
+
+
+
+destinoRoutes.get('/', async (req, res) => {
+
+    try {
+        
+        const usuarioId = req.payload.sub;
+
+        
+        const destinos = await Destino.findAll({
+            where: { usuario_id: usuarioId },
+            include: [{ model: Usuario, attributes: ['nome'] }] // Junção com a tabela Usuario para obter o nome do usuário
+        });
+
+     
+        res.status(200).json(destinos);
+    } catch (error) {
+        console.error('Erro ao listar destinos:', error);
+        res.status(500).json({ message: 'Erro interno do servidor' });
+    }
+});
 
 
 module.exports = destinoRoutes
