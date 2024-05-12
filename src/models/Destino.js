@@ -15,15 +15,24 @@ const Destino = connection.define('destinos', {
     coordernadas: {
         type: DataTypes.STRING,
     },
-    email: {
-        type: DataTypes.STRING,
+    usuario_id: {
+        type: DataTypes.INTEGER,
     },
-    password: {
-        type: DataTypes.STRING,
-    },
-})
+});
+
 
 
 Destino.belongsTo(Usuario, { foreignKey: 'usuario_id' });
 
-module.exports = Destino
+Destino.beforeCreate(async (destino, options) => {
+    // Certifique-se de que o parâmetro usuarioId está presente no objeto de destino
+    if (!destino.usuario_id) {
+        throw new Error('Parâmetro usuarioId ausente');
+    }
+});
+
+
+module.exports = Destino;
+
+
+
