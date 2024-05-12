@@ -19,6 +19,19 @@ const schema = yup.object().shape({
 
 // Cria um destino, específico por usuário, pegando o token do sub(jwt)
 destinoRoutes.post('/', async (req, res) => {
+    /*  
+            #swagger.tags = ['Destino'],
+            #swagger.parameters['body'] = {
+                in: 'body',
+                description: 'Cadastrar um novo destino',
+                schema: {
+                    $nome: "Raul Medeiros",
+                    $descricao: "2000-01-01",
+                    $localidade: "Lagoa do Peri",
+                    $cep: "11222999",
+            }
+        }
+    */
    
     try {
     await schema.validate(req.body, { abortEarly: false });
@@ -54,6 +67,9 @@ destinoRoutes.post('/', async (req, res) => {
 
 // Lista todos destinos, específico por usuário, pegando o token do sub(jwt)
 destinoRoutes.get('/', async (req, res) => {
+                /*  #swagger.tags = ['Destino']
+                    #swagger.description = 'Esta rota requer autenticação com um token de usuário para listar todos os destinos.' 
+                    */
 
     try {
         const usuarioId = req.payload.sub;
@@ -75,6 +91,10 @@ destinoRoutes.get('/', async (req, res) => {
 
 // Lista um destino, específico por usuário, pegando o token do sub(jwt)
 destinoRoutes.get('/:local_id', async (req, res) => {
+                /*  #swagger.tags = ['Destino']
+                    #swagger.description = 'Esta rota requer autenticação com um token de usuário para listar todos os destinos.' 
+                    */
+      
     try {
         
         const localId = req.params.local_id;
@@ -101,7 +121,11 @@ destinoRoutes.get('/:local_id', async (req, res) => {
 
 // atualiza um destino, específico por usuário, pegando o token do sub(jwt)
 destinoRoutes.put('/:id', async (req, res) => {
-    try {
+                 /*  #swagger.tags = ['Destino']
+                    #swagger.description = 'Esta rota requer autenticação com um token de usuário para listar todos os destinos.' 
+                    */  
+                   
+  try {
         const usuarioId = req.payload.sub;
         const destinoId = req.params.id;
 
@@ -129,6 +153,9 @@ destinoRoutes.put('/:id', async (req, res) => {
 
 // deleta um destino, específico por usuário, pegando o token do sub(jwt)
 destinoRoutes.delete('/:id', async (req, res) => {
+                /*  #swagger.tags = ['Destino']
+                    #swagger.description = 'Esta rota requer autenticação com um token de usuário para listar todos os destinos.' 
+                    */
     try {
         const usuarioId = req.payload.sub;
         const destinoId = req.params.id;

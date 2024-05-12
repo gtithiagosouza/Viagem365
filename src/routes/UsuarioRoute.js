@@ -18,7 +18,25 @@ const usuarioRoutes = new Router()
 
 // Rota para novos usuários
 usuarioRoutes.post('/', async (req, res) => {
-   
+       /*  
+            #swagger.tags = ['Usuário'],
+            #swagger.parameters['body'] = {
+                in: 'body',
+                description: 'Cadastrar um novo usuário',
+                schema: {
+                    $nome: "Raul Medeiros",
+                    $data_nascimento: "2000-01-01",
+                    $sexo: "M",
+                    $data_nascimento: "1996-12-15",
+                    $cpf: "01234567800",
+                    $endereco: "Palhoça",
+                    $email: "nome@dominio.com.br",
+                    $password: "123456"
+                    
+            }
+        }
+    */
+
     try {        
         await schema.validate(req.body, { abortEarly: false });
            const usuario = await Usuario.create(req.body);
