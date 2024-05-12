@@ -2,7 +2,7 @@ const { verify } = require("jsonwebtoken");
 
 async function auth(req, res, next) {
     try {
-        console.log("Entramos no Middleware");
+        
 
         const { authorization } = req.headers;
 
@@ -11,7 +11,7 @@ async function auth(req, res, next) {
         }
 
         const decodedToken = verify(authorization, process.env.SECRET_JWT);
-        console.log('Payload:', decodedToken);
+        
 
         req['payload'] = decodedToken;     
 
