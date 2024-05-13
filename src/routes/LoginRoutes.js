@@ -15,6 +15,17 @@ const schema = yup.object().shape({
   });
  
 loginRoutes.post('/', async (req, res) => {
+             /*  
+            #swagger.tags = ['Login'],
+            #swagger.parameters['body'] = {
+                in: 'body',
+                description: 'Faça login para autenticar',
+                schema: {
+                    $email: "teste123@gmail.com",
+                    $password: "teste123"
+          }
+        }
+    */
   try {
     await schema.validate(req.body, { abortEarly: false });
       
@@ -25,7 +36,7 @@ loginRoutes.post('/', async (req, res) => {
       })
 
       if(!usuario){
-          return res.status(404).json({ error: 'Nenhum aluno encontrado com o email e senha fornecidos!' })
+          return res.status(404).json({ error: 'Nenhum usuário encontrado com o email e senha fornecidos!' })
       }
 
       const payload = {sub: usuario.id, email: usuario.email, nome: usuario.nome}
