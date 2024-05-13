@@ -36,7 +36,7 @@ loginRoutes.post('/', async (req, res) => {
       })
 
       if(!usuario){
-          return res.status(404).json({ error: 'Nenhum aluno encontrado com o email e senha fornecidos!' })
+          return res.status(404).json({ error: 'Nenhum usuário encontrado com o email e senha fornecidos!' })
       }
 
       const payload = {sub: usuario.id, email: usuario.email, nome: usuario.nome}
