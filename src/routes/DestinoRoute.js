@@ -26,9 +26,9 @@ destinoRoutes.post('/', async (req, res) => {
                 description: 'Cadastrar um novo destino',
                 schema: {
                     $nome: "Raul Medeiros",
-                    $descricao: "2000-01-01",
+                    $descricao: "Local Bonito",
                     $localidade: "Lagoa do Peri",
-                    $cep: "11222999",
+                    $cep: "88104000",
             }
         }
     */

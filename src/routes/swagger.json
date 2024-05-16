@@ -158,7 +158,7 @@
                 },
                 "descricao": {
                   "type": "string",
-                  "example": "2000-01-01"
+                  "example": "Local Bonito"
                 },
                 "localidade": {
                   "type": "string",
@@ -166,7 +166,7 @@
                 },
                 "cep": {
                   "type": "string",
-                  "example": "11222999"
+                  "example": "88104000"
                 }
               },
               "required": [

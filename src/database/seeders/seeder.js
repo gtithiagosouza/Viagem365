@@ -32,14 +32,14 @@ module.exports = {
                     descricao: "Local acolhedor",
                     localidade: "Pinheira",
                     coordernadas: "-100 -5000",
-                    usuario_id: "19"
+                    usuario_id: "1"
                 },
                 {
                   nome: "Ponta do Coral",
                   descricao: "Local Bonito",
                   localidade: "Praia de Fora",
                   coordernadas: "-100 -5000",
-                  usuario_id: "20"
+                  usuario_id: "2"
                 }
       ]);
   },
