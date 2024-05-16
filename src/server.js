@@ -1,6 +1,7 @@
 const express = require('express') 
 const cors = require('cors') 
 const { connection } = require('./database/connection')
+const routes = require('./routes/routes')
 
 const PORT_API = process.env.PORT_API 
 
@@ -10,6 +11,7 @@ class Server {
   { 
     this.middlewares(server)
     this.database()  
+    server.use(routes)
     this.initializeServer(server) 
   }
 
